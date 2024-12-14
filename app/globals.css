@@ -104,3 +104,59 @@ body {
   padding-left: 15px !important;
   color: white;
 }
+.dotted-background{
+  background-color: #000000;
+  background-image: radial-gradient(#292a2a 1px , transparent 1px);
+  background-size: 30px 30px;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    #ff7e5f 5%,  
+    #feb47b 10%,  
+    #f9d423 15%,  
+    #00c9ff 20%,  
+    #92fe9d 25%,  
+    #a1c4fd 30%, 
+    #fbc2eb 35%,  
+    #ff9a9e 40%,  
+    #d4fc79 45%,  
+    #84fab0 55%, 
+    #8fd3f4 60%,  
+    #a6c1ee 65%,  
+    #d4a5a5 70%,  
+    #f45c43 75%,  
+    #e96443 80%,  
+    #9055ff 85%,  
+    #1c92d2 90%,  
+    #76b852 95%,  
+    #ff7e5f 100%  
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* text-fill-color: transparent; */
+  line-height: 1; 
+  display: inline-block; 
+  background-size: 800% 800%; 
+  animation: gradient-animation 12s ease-in-out infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

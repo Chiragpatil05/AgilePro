@@ -78,79 +78,84 @@ export default function Home() {
       {/* Hero Section */}
       <section className="container mx-auto py-20 text-center">
         <h1 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold gradient-title pb-6 flex flex-col">
-          Streamline Your Workflow <br />
-          <span className="flex mx-auto gap-3 sm:gap-4 items-center">
-            with
-            <Image
-              src={"/logo2.png"}
-              alt="Zscrum Logo"
-              width={400}
-              height={80}
-              className="h-14 sm:h-24 w-auto object-contain"
-            />
+          Streamline Your Sprints with <br/>
+
+          <span className=" font-extrabold text-transparent bg-clip-text gradient-text flex mx-auto gap-3 sm:gap-4 items-center">
+            AGILE PRO
           </span>
+          
         </h1>
+        
         <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-          Empower your team with our intuitive project management solution.
+          Boost Your Teams Productivity with Our Intuitive Project Management Solution
         </p>
-        <p className="text-xl mb-12 max-w-2xl mx-auto"></p>
-        <Link href="/onboarding">
+
+        <Link href='/onboarding'>
           <Button size="lg" className="mr-4">
-            Get Started <ChevronRight size={18} className="ml-1" />
+            Get Started <ChevronRight size={18} />   
           </Button>
         </Link>
-        <Link href="#features">
-          <Button size="lg" variant="outline">
-            Learn More
+
+        <Link href='#features'>
+          <Button size="lg" className="mr-4" variant="outline">
+            Learn More<ChevronRight size={18} className="ml-1"/>   
           </Button>
         </Link>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="bg-gray-900 py-20 px-5">
+      <section id="features" className="py-20 px-5 text-white">
         <div className="container mx-auto">
-          <h3 className="text-3xl font-bold mb-12 text-center">Key Features</h3>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <h3 className="text-4xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
+            Key Features
+          </h3> 
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {features.map((feature, index) => (
-              <Card key={index} className="bg-gray-800">
-                <CardContent className="pt-6">
-                  <feature.icon className="h-12 w-12 mb-4 text-blue-300" />
-                  <h4 className="text-xl font-semibold mb-2">
-                    {feature.title}
-                  </h4>
-                  <p className="text-gray-300">{feature.description}</p>
-                </CardContent>
-              </Card>
+              <div
+                key={index}
+                className="relative p-8 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-3 group"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 rounded-3xl transition duration-500"></div>
+                <div className="flex items-center justify-center w-16 h-16 mb-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full shadow-md">
+                  <feature.icon className="h-8 w-8" />
+                </div>
+                <h4 className="text-2xl font-semibold mb-3 group-hover:text-purple-300 transition">
+                  {feature.title}
+                </h4>
+                <p className="text-gray-400 group-hover:text-gray-200 transition">
+                  {feature.description}
+                </p>
+              </div>
             ))}
-          </div>
-        </div>
+    </div>
+  </div>
       </section>
 
-      {/* Companies Carousel */}
-      <section className="py-20">
-        <div className="container mx-auto">
-          <h3 className="text-3xl font-bold mb-12 text-center">
-            Trusted by Industry Leaders
-          </h3>
-          <CompanyCarousel />
-        </div>
-      </section>
 
       {/* FAQ Section */}
-      <section className="bg-gray-900 py-20 px-5">
-        <div className="container mx-auto">
-          <h3 className="text-3xl font-bold mb-12 text-center">
-            Frequently Asked Questions
-          </h3>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+      <section className="py-20 px-5 bg-black text-white">
+  <div className="container mx-auto">
+    <h3 className="text-4xl font-extrabold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
+      Frequently Asked Questions
+    </h3>
+    <Accordion type="single" collapsible className="w-full">
+      {faqs.map((faq, index) => (
+        <AccordionItem
+          key={index}
+          value={`item-${faq.question}`}
+          className="bg-gray-900 rounded-xl shadow-md mb-4 transition-all duration-300 hover:shadow-xl"
+        >
+          <AccordionTrigger className="py-4 px-6 text-lg font-semibold text-gray-200 bg-gray-900 rounded-xl hover:bg-gray-600 transition-colors duration-300 ease-in-out">
+            {faq.question}
+          </AccordionTrigger>
+          <AccordionContent className="py-4 px-6 text-lg text-gray-400">
+            {faq.answer}
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  </div>
       </section>
 
       {/* CTA Section */}
