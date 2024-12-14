@@ -1,5 +1,6 @@
-<img src="jira-clone\public\screenshot.png">
-# Agile Pro
+<img src="![image](./public/screenshot.png)
+"/>
+## Agile Pro
 
 ## 🏆 Streamline Your Sprints with Agile Pro
 
